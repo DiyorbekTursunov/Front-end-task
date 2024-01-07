@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = ({ register, setpassword, error , setError}) => {
+const Form = ({ register, setpassword, error , setError , errorMassage}) => {
     setTimeout(() => {
         if (error === true) {
             setError(false)
@@ -17,7 +17,7 @@ const Form = ({ register, setpassword, error , setError}) => {
             className="py-2 pl-2"
             onChange={(e) => setpassword(e.target.value.toLocaleLowerCase())}
           />
-        {error && <span className="text-red-600">Parol noto'g'ri</span>}
+        {error && <span className="text-red-600">{errorMassage}</span>}
         </div>
         <button
           onClick={(e) => register(e)}
